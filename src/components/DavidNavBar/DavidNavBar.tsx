@@ -1,16 +1,16 @@
-import { Container, Nav, NavDropdown, Navbar } from "react-bootstrap";
+import { Button, Container, Nav, NavDropdown, Navbar } from "react-bootstrap";
 import 'bootstrap/dist/css/bootstrap.css';
 import Link from "next/link";
+import * as Icon from 'react-bootstrap-icons';
 
 export default function DavidNavBar() {
   
   return (
-    <Navbar bg="light" expand="lg">
+    <Navbar bg="light" expand="lg" style={{marginBottom:'2em'}}>
     <Container>
       <Link href="/">
-        <Navbar.Brand>React-Bootstrap</Navbar.Brand>
+        <Navbar.Brand>David Envull</Navbar.Brand>
       </Link>
-      <Navbar.Toggle aria-controls="basic-navbar-nav" />
       <Navbar.Collapse id="basic-navbar-nav">
         <Nav className="me-auto">
           <Link href="/blog">
@@ -24,6 +24,9 @@ export default function DavidNavBar() {
           </Link>
         </Nav>
       </Navbar.Collapse>
+      <Button style={{color:'red'}}> 
+        <Icon.MoonFill />
+      </Button>
     </Container>
   </Navbar>
   )

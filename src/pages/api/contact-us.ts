@@ -15,21 +15,14 @@ const transporter = nodemailer.createTransport({
 
 export default function handler(
   req: NextApiRequest,
-  res: NextApiResponse<void>
+  res: NextApiResponse<any>
 ) {
 
-  var mailOptions = {
-    from: 'youremail@gmail.com',
-    to: 'myfriend@yahoo.com',
-    subject: 'Sending Email using Node.js',
-    text: 'That was easy!'
-  };
+  totallyDoStuff(req);
+  
+  return res.status(200).json({ message: 'Hello from Next.js!' })
+}
 
-  if (req.method && req.method === 'POST') {
-    transporter.sendMail(mailOptions, function(error, info){
-      return error ? res.status(500) : res.status(200);
-    }); 
-  }
-  const message = process.env.TRANSPORTER_EMAIL ?? "asdasd";
-  return res.status(400);
+const totallyDoStuff = (req: NextApiRequest) => {
+
 }
