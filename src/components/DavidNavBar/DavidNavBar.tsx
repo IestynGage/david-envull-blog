@@ -1,7 +1,7 @@
 import { Button, Container, Nav, NavDropdown, Navbar } from "react-bootstrap";
-import 'bootstrap/dist/css/bootstrap.css';
 import Link from "next/link";
 import * as Icon from 'react-bootstrap-icons';
+import ThemeButton from "../ThemeButton/ThemeButton.jsx";
 
 export default function DavidNavBar() {
   
@@ -24,9 +24,7 @@ export default function DavidNavBar() {
           </Link>
         </Nav>
       </Navbar.Collapse>
-      <Button style={{color:'red'}}> 
-        <Icon.MoonFill />
-      </Button>
+      <ThemeButton />
     </Container>
   </Navbar>
   )

@@ -1,8 +1,5 @@
 import Head from 'next/head';
-import Image from 'next/image';
-// import styles from './layout.module.css';
-// import utilStyles from '..>?/styles/utils.module.css';
-import Link from 'next/link';
+import 'bootstrap/dist/css/bootstrap.css';
 import DavidNavBar from './DavidNavBar/DavidNavBar';
 
 export default function Layout({
