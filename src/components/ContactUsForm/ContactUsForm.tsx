@@ -1,7 +1,5 @@
-import { Button, Container, Form, Nav, NavDropdown, Navbar } from "react-bootstrap";
+import { Button, Form } from "react-bootstrap";
 import 'bootstrap/dist/css/bootstrap.css';
-import Link from "next/link";
-import { FormEvent } from "react";
 
 interface ContactUsFormProps {
   setToast: (displayToast:boolean) => void;
@@ -12,7 +10,6 @@ export default function ContactUsForm({ setToast }:ContactUsFormProps) {
   const onSubmit = async (event:any) => {
     event.preventDefault();
   
-    console.log(event.target)
     const data = JSON.stringify({
       email: event.target.formEmail.value,
       subject: event.target.formSubject.value,
@@ -46,7 +43,7 @@ export default function ContactUsForm({ setToast }:ContactUsFormProps) {
       <Form.Label>Text</Form.Label>
       <Form.Control as="textarea" rows={4} placeholder="Text" />
     </Form.Group>
-    <Button variant="primary" type="submit">
+    <Button variant="primary" type="submit" style={{width:'100%'}}>
       Submit
     </Button>
   </Form>

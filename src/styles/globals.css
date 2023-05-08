@@ -1,4 +1,4 @@
-:root {
+/* :root {
   --black: #111016;
   --light-black: #1a1a1f;
 
@@ -6,7 +6,7 @@
   --gray: #9e9e9e;
   color: var(--gray);
   color: #eee;
-}
+} */
 
 /* @media (prefers-color-scheme: dark) {
   :root {
@@ -40,11 +40,11 @@
     --card-border-rgb: 200, 200, 200;
   }
 } */
-
+/* 
 h1 {
   color: var(--light-gray);
 }
 
 body {
   color: #eee;
-}
+} */

@@ -21,7 +21,9 @@ export default function Index() {
         </Toast.Header>
         <Toast.Body>Message successfully sent.</Toast.Body>
     </Toast>
-      <div style={{justifyContent:'center', width:'100%', display:'flex'}}>
+      <div style={{justifyContent:'center', width:'100%', display:'flex', flexDirection:'column', alignItems:'center'}}>
+        <h1> Contact me</h1>
+        <p> Use the below form to contact me. </p>
       <Card style={{ width: '50rem', padding: '1em', margin: '1em' }}>
         <ContactUsForm setToast={setDisplayToast}/>
       </Card>
