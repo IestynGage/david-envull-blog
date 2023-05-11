@@ -1,6 +1,5 @@
-import { Button, Container, Nav, NavDropdown, Navbar } from "react-bootstrap";
+import { Container, Nav, Navbar } from "react-bootstrap";
 import Link from "next/link";
-import * as Icon from "react-bootstrap-icons";
 import ThemeButton from "../ThemeButton/ThemeButton.jsx";
 
 export default function DavidNavBar() {
