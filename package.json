@@ -6,7 +6,8 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "prettier": "prettier --write ."
   },
   "dependencies": {
     "@types/node": "18.15.11",
@@ -19,6 +20,7 @@
     "next": "13.2.4",
     "nodemailer": "^6.9.1",
     "pg": "^8.10.0",
+    "prettier": "^2.8.8",
     "react": "18.2.0",
     "react-bootstrap": "^2.7.4",
     "react-bootstrap-icons": "^1.10.3",
