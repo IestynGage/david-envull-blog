@@ -3,6 +3,7 @@ import Layout from '@/components/layout'
 import { getSortedPostsData } from '@/lib/posts'
 import Head from 'next/head'
 import Link from 'next/link'
+import utilStyles from '../../styles/Utils.module.css'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -12,7 +13,7 @@ export default function Index({ allPostsData }:any) {
       <Head>
         {/* <title>{siteTitle}</title> */}
       </Head>
-      <section>
+      <section className={utilStyles.centerItems}>
         <h2>Blog</h2>
         <ul>
           {allPostsData.map(({ id, date, title }:any) => (
