@@ -1,5 +1,5 @@
 ---
-title: 'When to Use Static Generation v.s. Server-side Rendering'
+title: 'Smart manbusiness'
 date: '2022-01-02'
 ---
 

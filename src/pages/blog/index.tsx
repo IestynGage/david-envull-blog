@@ -11,7 +11,7 @@ export default function Index({ allPostsData }:any) {
   return (
     <Layout>
       <Head>
-        {/* <title>{siteTitle}</title> */}
+        <title> David Envull posts </title>
       </Head>
       <section className={utilStyles.centerItems}>
         <h2>Blog</h2>

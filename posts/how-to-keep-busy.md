@@ -1,5 +1,5 @@
 ---
-title: 'Two Forms of Pre-rendering'
+title: 'How to keep busy'
 date: '2022-01-01'
 ---
 
