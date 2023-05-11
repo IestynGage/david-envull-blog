@@ -1,18 +1,18 @@
-import Head from 'next/head';
-import 'bootstrap/dist/css/bootstrap.css';
-import DavidNavBar from './DavidNavBar/DavidNavBar';
+import Head from "next/head";
+import "bootstrap/dist/css/bootstrap.css";
+import DavidNavBar from "./DavidNavBar/DavidNavBar";
 
 export default function Layout({
   children,
   headTitle,
   headDescription,
 }: {
-  children: React.ReactNode
+  children: React.ReactNode;
   headTitle?: string;
   headDescription?: string;
 }) {
   return (
-    <div >
+    <div>
       <Head>
         <link rel="icon" href="/favicon.ico" />
         <meta
