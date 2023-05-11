@@ -1,5 +1,5 @@
 ---
-title: 'Smart manbusiness'
+title: 'Smart man business - some extra strings to make this thing center'
 date: '2022-01-02'
 ---
 
