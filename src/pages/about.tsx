@@ -5,18 +5,18 @@ import utilStyles from "../styles/Utils.module.css";
 const inter = Inter({ subsets: ["latin"] });
 
 export default function Index() {
+
   return (
     <Layout>
-      <div className={utilStyles.centerItems} style={{ textAlign: "center" }}>
+      <div className={`${utilStyles.centerItems}`} style={{ textAlign: "center" }}>
         <div
-          className={utilStyles.centerItems}
-          style={{ textAlign: "center", width: "50em" }}
+          className={`${utilStyles.centerItems} ${utilStyles.displayContent}`}
+          style={{ textAlign: "center"}}
         >
           <h1
             className={utilStyles.centerItems}
             style={{ textAlign: "center" }}
           >
-            {" "}
             About me
           </h1>
           <p>

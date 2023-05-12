@@ -5,3 +5,11 @@
   flex-direction: column;
   align-items: center;
 }
+
+.removeBulletPoints > li {
+  list-style-type: none;
+}
+
+.displayContent {
+  width: min(50em, 80%);
+}
