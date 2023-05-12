@@ -21,6 +21,11 @@ export default function DavidNavBar() {
             <Link href="/about">About</Link>
           </Nav.Link>
         </Nav>
+        <Nav>
+          <Nav.Link as={'div'}>
+            <Link href="/capybara">Capybara</Link>
+          </Nav.Link>
+        </Nav>
       </Navbar.Collapse>
     </Container>
   </Navbar>
