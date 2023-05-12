@@ -2,25 +2,12 @@
 
 This project is a blog for David Envull. This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
-# Prerequisite
+## Getting started
 
-```bash
-git clone xyz
-cd david-envull-blog
-yarn
+```shell
+$ git clone xyz 
+$ cd david-envull-blog
 
-docker ....
-
+$ npm install
+$ npm run dev
 ```
-
-## Resources
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-# TODO
-* Add og:image for layout

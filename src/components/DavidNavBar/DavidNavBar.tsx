@@ -1,23 +1,28 @@
 import { Container, Nav, Navbar } from "react-bootstrap";
 import Link from "next/link";
-import ThemeButton from "../ThemeButton/ThemeButton.jsx";
 
 export default function DavidNavBar() {
   return (
-    <Navbar bg="light" expand="lg" style={{ marginBottom: "2em" }}>
-      <Container>
-        <Link href="/">
-          <Navbar.Brand>David Envull</Navbar.Brand>
-        </Link>
-        <Navbar.Collapse id="basic-navbar-nav">
-          <Nav className="me-auto">
+    <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
+    <Container>
+    <Link href="/">
+      <Navbar.Brand>David Envull</Navbar.Brand>
+    </Link>
+      <Navbar.Toggle aria-controls="responsive-navbar-nav" />
+      <Navbar.Collapse id="responsive-navbar-nav">
+        <Nav className="me-auto">
+          <Nav.Link as={'div'}>
             <Link href="/blog">Blog</Link>
+          </Nav.Link>
+          <Nav.Link as={'div'}>
             <Link href="/contact-me">Contact</Link>
+          </Nav.Link>
+          <Nav.Link as={'div'}>
             <Link href="/about">About</Link>
-          </Nav>
-        </Navbar.Collapse>
-        <ThemeButton />
-      </Container>
-    </Navbar>
+          </Nav.Link>
+        </Nav>
+      </Navbar.Collapse>
+    </Container>
+  </Navbar>
   );
 }
