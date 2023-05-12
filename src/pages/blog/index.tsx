@@ -14,22 +14,19 @@ export default function Index({ allPostsData }: any) {
       <Head>
         <title> David Envull posts </title>
       </Head>
-      <section className={utilStyles.centerItems}>
+      <section className={utilStyles.centerItems} >
         <h2>Blog</h2>
-        <ul className={utilStyles.centerItems}>
+        <ul className={utilStyles.centerItems} style={{padding:'0'}}>
           {allPostsData.map(({ id, date, title }: any) => (
             <Card
               key={id}
               className={utilStyles.centerItems}
               as="li"
-              style={{ width: "34em", padding: "1em", marginBottom: "1em" }}
+              style={{ width: "min(80%, 34em)", padding: "1em", marginBottom: "1em" }}
             >
-              <Card.Title style={{ textAlign: "center" }}>
+              <Card.Title style={{ textAlign: "center"}}>
                 <Link href={`/blog/${id}`}>{title}</Link>
               </Card.Title>
-              {/* <Card.Body className={utilStyles.centerItems + " " + utilStyles.centerItems}>
-                {date}
-              </Card.Body> */}
             </Card>
           ))}
         </ul>
