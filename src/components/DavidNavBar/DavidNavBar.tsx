@@ -23,7 +23,7 @@ export default function DavidNavBar() {
         </Nav>
         <Nav>
           <Nav.Link as={'div'}>
-            <Link href="/capybara">Capybara</Link>
+            <Link href="/blog/capybara">Capybara</Link>
           </Nav.Link>
         </Nav>
       </Navbar.Collapse>
