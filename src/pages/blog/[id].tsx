@@ -1,13 +1,11 @@
 import Head from "next/head";
-import { Inter } from "next/font/google";
 import Layout from "@/components/layout";
 import { getAllPostIds, getPostData } from "@/lib/posts";
 import utilStyles from "../../styles/Utils.module.css";
 
-const inter = Inter({ subsets: ["latin"] });
 
 export default function Post({ postData }: any) {
-  console.log(utilStyles)
+  
   return (
     <Layout>
       <Head>
@@ -15,13 +13,13 @@ export default function Post({ postData }: any) {
       </Head>
       <article>
         <div className={utilStyles.centerItems}>
-          <div
+          <article
             className={`${utilStyles.centerItems} ${utilStyles.displayContent}`}
           >
             <h1 style={{ textAlign: "center"}}>{postData.title}</h1>
             <div>{/* <Date dateString={postData.date} /> */}</div>
             <div dangerouslySetInnerHTML={{ __html: postData.contentHtml }} />
-          </div>
+          </article>
         </div>
       </article>
     </Layout>
