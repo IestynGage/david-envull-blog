@@ -5,10 +5,23 @@ import Head from "next/head";
 import Link from "next/link";
 import utilStyles from "../../styles/Utils.module.css";
 import { Card } from "react-bootstrap";
+import { PrismaClient } from "@prisma/client";
+import { getAllPosts } from "@/lib/database/user";
 
 const inter = Inter({ subsets: ["latin"] });
 
-export default function Index({ allPostsData }: any) {
+interface Post {
+  id:number;
+  title: string;
+}
+
+interface IndexProps {
+  allPostsData: Post[];
+}
+
+export default function Index({ allPostsData }: IndexProps) {
+  
+
   return (
     <Layout>
       <Head>
@@ -17,7 +30,7 @@ export default function Index({ allPostsData }: any) {
       <section className={utilStyles.centerItems} >
         <h2>Blog</h2>
         <ul className={utilStyles.centerItems} style={{padding:'0'}}>
-          {allPostsData.map(({ id, date, title }: any) => (
+          {allPostsData.map(({ id, title }: any) => (
             <Card
               key={id}
               className={utilStyles.centerItems}
@@ -35,11 +48,13 @@ export default function Index({ allPostsData }: any) {
   );
 }
 
-export async function getStaticProps() {
-  const allPostsData = getSortedPostsData();
+export async function getServerSideProps() {
+  const posts:Post[] = await getAllPosts();
+
+  // Pass data to the page via props
   return {
     props: {
-      allPostsData,
-    },
-  };
+      allPostsData: posts,
+    }
+   };
 }
