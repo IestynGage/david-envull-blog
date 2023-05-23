@@ -1,7 +1,7 @@
-import { Post } from '@/types/Post';
-import { PrismaClient } from '@prisma/client'
+import { Post } from "@/types/Post";
+import { PrismaClient } from "@prisma/client";
 
-const prisma = new PrismaClient()
+const prisma = new PrismaClient();
 
 export async function getAllPosts() {
   const posts = await prisma.post.findMany();
@@ -9,12 +9,11 @@ export async function getAllPosts() {
   return posts;
 }
 
-
-export async function getPost(id:number): Promise<Post> {
+export async function getPost(id: number): Promise<Post> {
   const post = await prisma.post.findFirst({
     where: {
       id: id,
-    }
+    },
   });
 
   if (post === null) {

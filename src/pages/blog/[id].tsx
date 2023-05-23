@@ -3,16 +3,14 @@ import Layout from "@/components/layout";
 import { getAllPostIds, getPostData } from "@/lib/posts";
 import utilStyles from "../../styles/Utils.module.css";
 import { getAllPosts, getPost } from "@/lib/database/user";
-import { Post } from '@/types/Post';
+import { Post } from "@/types/Post";
 import { GetServerSidePropsResult } from "next";
-
 
 interface PostPageProps {
   post: Post;
 }
 
-export default function PostPage({ post } :PostPageProps) {
-
+export default function PostPage({ post }: PostPageProps) {
   return (
     <Layout>
       <Head>
@@ -23,7 +21,7 @@ export default function PostPage({ post } :PostPageProps) {
           <article
             className={`${utilStyles.centerItems} ${utilStyles.displayContent}`}
           >
-            <h1 style={{ textAlign: "center"}}>{post.title}</h1>
+            <h1 style={{ textAlign: "center" }}>{post.title}</h1>
             <div dangerouslySetInnerHTML={{ __html: post.content }} />
           </article>
         </div>
@@ -32,14 +30,15 @@ export default function PostPage({ post } :PostPageProps) {
   );
 }
 
-
-export async function getServerSideProps({ params }: any): Promise<GetServerSidePropsResult<PostPageProps>> {
+export async function getServerSideProps({
+  params,
+}: any): Promise<GetServerSidePropsResult<PostPageProps>> {
   const post = await getPost(Number(params.id));
 
   // Pass data to the page via props
   return {
     props: {
       post: post,
-    }
-   };
+    },
+  };
 }
