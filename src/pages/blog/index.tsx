@@ -7,6 +7,7 @@ import utilStyles from "../../styles/Utils.module.css";
 import { Card } from "react-bootstrap";
 import { PrismaClient } from "@prisma/client";
 import { getAllPosts } from "@/lib/database/user";
+import { GetServerSideProps, GetServerSidePropsResult, GetStaticPropsResult } from "next";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -17,10 +18,11 @@ interface Post {
 
 interface IndexProps {
   allPostsData: Post[];
+  date: string;
 }
 
-export default function Index({ allPostsData }: IndexProps) {
-  
+export default function Index({ allPostsData, date}: IndexProps) {
+  console.log(date)
 
   return (
     <Layout>
@@ -29,6 +31,7 @@ export default function Index({ allPostsData }: IndexProps) {
       </Head>
       <section className={utilStyles.centerItems} >
         <h2>Blog</h2>
+        <p> Last generated {date} </p>
         <ul className={utilStyles.centerItems} style={{padding:'0'}}>
           {allPostsData.map(({ id, title }: any) => (
             <Card
@@ -48,13 +51,15 @@ export default function Index({ allPostsData }: IndexProps) {
   );
 }
 
-export async function getServerSideProps() {
-  const posts:Post[] = await getAllPosts();
 
-  // Pass data to the page via props
+export async function getStaticProps(): Promise<GetStaticPropsResult<IndexProps>> {
+  const posts:Post[] = await getAllPosts();
+  const date = new Date();
   return {
     props: {
       allPostsData: posts,
-    }
-   };
+      date: `${date.getHours()}:${date.getMinutes()}:${date.getSeconds()}`
+    },
+    revalidate: 30
+  }
 }

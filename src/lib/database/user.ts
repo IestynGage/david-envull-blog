@@ -5,7 +5,7 @@ const prisma = new PrismaClient()
 
 export async function getAllPosts() {
   const posts = await prisma.post.findMany();
-
+  prisma.$disconnect();
   return posts;
 }
 
@@ -21,5 +21,6 @@ export async function getPost(id:number): Promise<Post> {
     return Promise.reject(new Error("Database returned null"));
   }
 
+  prisma.$disconnect();
   return post;
 }

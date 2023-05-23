@@ -4,6 +4,7 @@ import { getAllPostIds, getPostData } from "@/lib/posts";
 import utilStyles from "../../styles/Utils.module.css";
 import { getAllPosts, getPost } from "@/lib/database/user";
 import { Post } from '@/types/Post';
+import { GetServerSidePropsResult } from "next";
 
 
 interface PostPageProps {
@@ -31,13 +32,8 @@ export default function PostPage({ post } :PostPageProps) {
   );
 }
 
-interface PostServerProps {
-  props: {
-    post: Post;
-  }
-}
 
-export async function getServerSideProps({ params }: any): Promise<PostServerProps> {
+export async function getServerSideProps({ params }: any): Promise<GetServerSidePropsResult<PostPageProps>> {
   const post = await getPost(Number(params.id));
 
   // Pass data to the page via props
