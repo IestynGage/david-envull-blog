@@ -22,11 +22,6 @@ export default function DavidNavBar() {
             <Link className={navBarStyles.navLinks} href="/about">About</Link>
           </Nav.Link>
         </Nav>
-        <Nav>
-          <Nav.Link as={'div'}>
-            <Link className={navBarStyles.navLinks} href="/blog/capybara">Capybara</Link>
-          </Nav.Link>
-        </Nav>
       </Navbar.Collapse>
     </Container>
   </Navbar>
